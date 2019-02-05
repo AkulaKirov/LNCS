@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
+            this.HideBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,15 +43,15 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // button1
+            // HideBtn
             // 
-            this.button1.Location = new System.Drawing.Point(11, 217);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "隐藏";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.HideBtn.Location = new System.Drawing.Point(11, 217);
+            this.HideBtn.Name = "HideBtn";
+            this.HideBtn.Size = new System.Drawing.Size(75, 23);
+            this.HideBtn.TabIndex = 0;
+            this.HideBtn.Text = "隐藏";
+            this.HideBtn.UseVisualStyleBackColor = true;
+            this.HideBtn.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
@@ -70,7 +70,7 @@
             this.exitBtn.TabIndex = 2;
             this.exitBtn.Text = "退出";
             this.exitBtn.UseVisualStyleBackColor = true;
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            this.exitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // label1
             // 
@@ -126,7 +126,7 @@
             // 
             this.runtimeLabel.AutoSize = true;
             this.runtimeLabel.Font = new System.Drawing.Font("等线", 12F);
-            this.runtimeLabel.Location = new System.Drawing.Point(93, 165);
+            this.runtimeLabel.Location = new System.Drawing.Point(113, 165);
             this.runtimeLabel.Name = "runtimeLabel";
             this.runtimeLabel.Size = new System.Drawing.Size(36, 17);
             this.runtimeLabel.TabIndex = 11;
@@ -138,21 +138,21 @@
             this.label5.Font = new System.Drawing.Font("等线", 12F);
             this.label5.Location = new System.Drawing.Point(9, 165);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 17);
+            this.label5.Size = new System.Drawing.Size(98, 17);
             this.label5.TabIndex = 10;
-            this.label5.Text = "运行时间";
+            this.label5.Text = "运行时间(秒)";
             // 
             // notifyIcon1
             // 
-            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Text = "LNCS";
             this.notifyIcon1.Visible = true;
-            this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Click);
+            this.notifyIcon1.Click += new System.EventHandler(this.NotifyIcon1_Click);
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 900;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // MainForm
             // 
@@ -169,7 +169,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.HideBtn);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -187,7 +187,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button HideBtn;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Label label1;

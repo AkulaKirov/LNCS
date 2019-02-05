@@ -13,9 +13,6 @@ namespace LNCS
     public partial class MainForm : Form
     {
 
-        bool isConnected = false;
-
-
         public MainForm()
         {
             InitializeComponent();
@@ -23,27 +20,33 @@ namespace LNCS
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
+            notifyIcon1.Icon = Properties.Resources.disconnected;
+            notifyIcon1.Text = "LNCS    未连接";
+            statusLabel.Text = "未连接";
+            ipLabel.Text = Funtion.GetLocalIP();
+            runtimeLabel.Text = Funtion.runtime.ToString();
         }
 
-        private void exitBtn_Click(object sender, EventArgs e)
+        private void ExitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
 
-        private void notifyIcon1_Click(object sender, EventArgs e)
+        private void NotifyIcon1_Click(object sender, EventArgs e)
         {
             this.Show();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
-            
+            notifyIcon1.Icon = Funtion.isConnected ? Properties.Resources.connected : Properties.Resources.disconnected;
+            notifyIcon1.Text = "LNCS" + (Funtion.isConnected ? "    已连接" : "    未连接");
+            Funtion.runtime++;runtimeLabel.Text = Funtion.runtime.ToString();
         }
     }
 }
