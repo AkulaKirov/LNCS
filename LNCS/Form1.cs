@@ -46,7 +46,7 @@ namespace LNCS
         {
             notifyIcon1.Icon = Funtion.isConnected ? Properties.Resources.connected : Properties.Resources.disconnected;
             notifyIcon1.Text = "LNCS" + (Funtion.isConnected ? "    已连接" : "    未连接");
-            Funtion.runtime++;runtimeLabel.Text = Funtion.runtime.ToString();
+            Funtion.runtime++; runtimeLabel.Text = Funtion.runtime.ToString();   //这里这么写会溢出的，要找时间重新写一下
         }
     }
 }
